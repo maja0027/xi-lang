@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+*.o
+*.so
+*.xib
+
+# Generated visualizations
+docs/assets/graph_*.svg
+docs/assets/graph_*.png
+docs/assets/*.dot
+.DS_Store
+__MACOSX/

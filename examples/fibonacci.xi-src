@@ -1,0 +1,15 @@
+-- Fibonacci on Peano naturals
+-- Demonstrates: import, recursion (μ), pattern matching (ι), ADTs
+
+import Prelude
+
+def fib n = match n {
+    Zero → Zero
+  | Succ m → match m {
+      Zero → Succ Zero
+    | Succ k → add (fib m) (fib k)
+    }
+}
+
+def main = fib (Succ (Succ (Succ (Succ (Succ (Succ Zero))))))
+-- Result: 8 (as Nat)

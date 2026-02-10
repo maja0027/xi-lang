@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xi-lang"
+version = "0.1.0"
+description = "Ξ (Xi) — The Final Programming Language"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "Alex P. Slaby"},
+]
+keywords = ["programming-language", "dependent-types", "graph-reduction", "type-theory"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Compilers",
+    "Topic :: Software Development :: Interpreters",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/maja0027/xi-lang"
+Repository = "https://github.com/maja0027/xi-lang"
+Issues = "https://github.com/maja0027/xi-lang/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

@@ -1,0 +1,4 @@
+-- Hello World in Xi
+-- The simplest possible program
+
+def main = "Hello, Xi!"

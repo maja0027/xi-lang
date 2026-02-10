@@ -1,0 +1,12 @@
+-- Option type for safe computation
+-- Demonstrates: Maybe/Option pattern, error handling without exceptions
+
+def safeDivide a b = if b == 0 then None else Some (a / b)
+
+def withDefault opt d = match opt {
+    None → d
+  | Some x → x
+}
+
+def main = withDefault (safeDivide 100 0) 42
+-- Result: 42 (division by zero returns None, default kicks in)

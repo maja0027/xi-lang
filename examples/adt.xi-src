@@ -1,0 +1,21 @@
+-- Algebraic Data Types
+-- Demonstrates: user-defined types, pattern matching, constructors
+
+type Color = Red | Green | Blue
+
+type Shape = Circle Int | Rect Int Int | Point
+
+def colorCode c = match c {
+    Red → 1
+  | Green → 2
+  | Blue → 3
+}
+
+def area s = match s {
+    Circle r → r * r * 3
+  | Rect w h → w * h
+  | Point → 0
+}
+
+def main = area (Rect 4 5) + colorCode Blue
+-- Result: 23 (20 + 3)

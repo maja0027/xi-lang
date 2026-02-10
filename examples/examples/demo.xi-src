@@ -1,0 +1,45 @@
+-- ═══════════════════════════════════════════════════════
+-- Ξ (Xi) Example Programs — Surface Syntax
+-- Copyright (c) 2026 Alex P. Slaby — MIT License
+-- ═══════════════════════════════════════════════════════
+
+-- Arithmetic
+def double = λx. x + x
+def square = λ(x : Int). x * x
+def max = λa b. if a > b then a else b
+
+-- Recursive addition on Nat (Peano)
+def add = fix self. λn. λm. match n {
+    Zero → m
+  | Succ k → Succ (self k m)
+}
+
+-- Recursive multiplication
+def mul = fix self. λn. λm. match n {
+    Zero → Zero
+  | Succ k → add (self k m) m
+}
+
+-- Fibonacci
+def fib = fix self. λn. match n {
+    Zero → Zero
+  | Succ k → match k {
+      Zero → Succ Zero
+    | Succ j → add (self (Succ j)) (self j)
+  }
+}
+
+-- Factorial
+def fact = fix self. λn. match n {
+    Zero → Succ Zero
+  | Succ k → mul (Succ k) (self k)
+}
+
+-- Option handling
+def unwrap_or = λdefault. λopt. match opt {
+    None → default
+  | Some x → x
+}
+
+-- Main: fibonacci(7) = 13
+def main = fib (Succ (Succ (Succ (Succ (Succ (Succ (Succ Zero)))))))

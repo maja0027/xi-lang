@@ -1,0 +1,7 @@
+-- String operations
+-- Demonstrates: string concatenation, string length
+
+def greet name = "Hello, " ++ name ++ "!"
+
+def main = greet "Xi"
+-- Result: "Hello, Xi!"

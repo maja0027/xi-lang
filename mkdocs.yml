@@ -1,0 +1,58 @@
+site_name: Ξ (Xi) Language Documentation
+site_description: AI-native programming language with binary graph representation
+site_author: Alex P. Slaby
+repo_url: https://github.com/hovinek/xi-lang
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: deep purple
+    accent: indigo
+  features:
+    - navigation.sections
+    - navigation.expand
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Quick Start: guide/quickstart.md
+    - Examples: guide/examples.md
+    - Docker: guide/docker.md
+    - VS Code: guide/vscode.md
+  - Language Reference:
+    - Language Spec: spec/language.md
+    - Type System: spec/types.md
+    - Effect System: spec/effects.md
+    - Binary Format: spec/binary.md
+    - XiC Format: spec/xic.md
+  - Architecture:
+    - Interpreter: arch/interpreter.md
+    - Optimizer: arch/optimizer.md
+    - Module System: arch/modules.md
+    - Hardware: arch/hardware.md
+  - API Reference:
+    - xi (Core): api/xi.md
+    - xi_compiler: api/xi_compiler.md
+    - xi_match: api/xi_match.md
+    - xi_typecheck: api/xi_typecheck.md
+    - xi_optimizer: api/xi_optimizer.md
+    - xi_compress: api/xi_compress.md
+    - xi_module: api/xi_module.md
+    - xi_stdlib: api/xi_stdlib.md
+    - xi_repl: api/xi_repl.md
+    - xi_multicore: api/xi_multicore.md
+    - xi_graphviz: api/xi_graphviz.md
+    - xi_deserialize: api/xi_deserialize.md
+  - FAQ: faq.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - tables

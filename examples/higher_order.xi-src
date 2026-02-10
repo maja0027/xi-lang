@@ -1,0 +1,21 @@
+-- Higher-order functions
+-- Demonstrates: functions as values, composition, currying
+
+def apply f x = f x
+def compose f g x = f (g x)
+def flip f x y = f y x
+def twice f x = f (f x)
+
+def inc x = x + 1
+def double x = x + x
+def square x = x * x
+
+def main = twice (compose double inc) 3
+-- Result: twice (double . inc) 3
+--       = (double . inc) ((double . inc) 3)
+--       = (double . inc) (double (inc 3))
+--       = (double . inc) (double 4)
+--       = (double . inc) 8
+--       = double (inc 8)
+--       = double 9
+--       = 18

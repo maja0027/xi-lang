@@ -1,0 +1,37 @@
+{
+  "name": "xi-lang",
+  "displayName": "Ξ (Xi) Language",
+  "description": "Syntax highlighting for the Xi programming language (.xi-src files)",
+  "version": "0.1.0",
+  "publisher": "alex-p-slaby",
+  "license": "MIT",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Programming Languages"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maja0027/xi-lang"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "xi",
+        "aliases": ["Xi", "xi"],
+        "extensions": [".xi-src", ".xi"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "xi-module",
+        "aliases": ["Xi Module"],
+        "extensions": [".xi-mod"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "xi",
+        "scopeName": "source.xi",
+        "path": "./syntaxes/xi.tmLanguage.json"
+      }
+    ]
+  }
+}

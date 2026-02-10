@@ -1,0 +1,146 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Xi",
+  "scopeName": "source.xi",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#operators" },
+    { "include": "#primitives" },
+    { "include": "#constructors" },
+    { "include": "#variables" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-dash.xi",
+          "match": "--.*$"
+        },
+        {
+          "name": "comment.block.xi",
+          "begin": "\\{-",
+          "end": "-\\}"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.xi",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.xi",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hex.xi",
+          "match": "\\b0x[0-9A-Fa-f]+\\b"
+        },
+        {
+          "name": "constant.numeric.float.xi",
+          "match": "\\b[0-9]+\\.[0-9]+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.xi",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.xi",
+          "match": "\\b(match|with|let|in|where|if|then|else|case|of|do|end)\\b"
+        },
+        {
+          "name": "keyword.declaration.xi",
+          "match": "\\b(def|module|import|export|type|data|inductive|record|class|instance)\\b"
+        },
+        {
+          "name": "keyword.operator.xi",
+          "match": "\\b(λ|Λ|λΤ|μ|Π|Σ|fix|forall|exists)\\b"
+        },
+        {
+          "name": "keyword.operator.arrow.xi",
+          "match": "(→|←|↦|⇒|⊢|≡|≅)"
+        },
+        {
+          "name": "keyword.other.xi",
+          "match": "\\b(as|open|hiding|renaming|public|private)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "entity.name.type.universe.xi",
+          "match": "\\b(𝒰|Type|Prop|Set)\\b"
+        },
+        {
+          "name": "entity.name.type.xi",
+          "match": "\\b(Nat|Bool|Int|Float|String|List|Option|Result|Unit|Void|Sigma|Pi)\\b"
+        },
+        {
+          "name": "entity.name.type.user.xi",
+          "match": "\\b[A-Z][a-zA-Z0-9_']*\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.xi",
+          "match": "(\\+|\\-|\\*|/|%|==|!=|<|>|<=|>=|&&|\\|\\||!|\\.|\\$|\\|)"
+        },
+        {
+          "name": "keyword.operator.assignment.xi",
+          "match": "(:=|=)"
+        },
+        {
+          "name": "keyword.operator.type.xi",
+          "match": "(:)"
+        }
+      ]
+    },
+    "primitives": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.xi",
+          "match": "\\b(add|sub|mul|div|mod|eq|lt|gt|print|read|io_bind|io_pure|io_print)\\b"
+        },
+        {
+          "name": "constant.language.xi",
+          "match": "\\b(true|false|zero|succ|nil|cons|none|some|ok|err|unit)\\b"
+        }
+      ]
+    },
+    "constructors": {
+      "patterns": [
+        {
+          "name": "entity.name.tag.xi",
+          "match": "\\b(Zero|Succ|Nil|Cons|None|Some|Ok|Err|True|False|Leaf|Branch)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.xi",
+          "match": "\\b[a-z_][a-zA-Z0-9_']*\\b"
+        }
+      ]
+    }
+  }
+}
